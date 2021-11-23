@@ -1,0 +1,57 @@
+<!doctype html>
+<html >
+  <head>
+      <title>prasad Kanika</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/834b138f24.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="jQ.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class='container p-4' >
+    <div class='row p-2' >
+        Enter the text : &nbsp  <input type='text' id='text'>
+     </div>
+     <div class='row' >
+         <button class='btn' onclick='speech()'>speak</button>
+      </div>
+</div>
+
+</body>
+<script >
+    /*window.onload=welcomeMessage;
+    function welcomeMessage(){
+        msg.text ="welcome , please enter the text in the text field provided"
+        window.speechSynthesis.speak(msg);
+    }*/
+    alert("HI! i'm prasad \n Try to enter the text in the text field provided to listen it")
+
+    function speech(){
+        var text=document.querySelector('#text').value
+        //alert(text.length)
+
+        if ('speechSynthesis' in window) {
+    }else{
+      alert("Sorry, your browser doesn't support text to speech!");
+    }
+        var msg = new SpeechSynthesisUtterance();
+        if(text.length==0){
+            msg.text ="sorry , you did not enter any text. please try again"
+            window.speechSynthesis.speak(msg);
+        }
+        else {
+        msg.text =text
+        window.speechSynthesis.speak(msg);
+    }
+    }
+
+</script>
+</html>
